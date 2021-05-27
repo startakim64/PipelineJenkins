@@ -69,6 +69,8 @@ pipeline {
                 success {
 
                     archiveArtifacts 'target/*.jar'
+					sh "cp target/*.jar /home/srvadmin/RepoArtifacts/"
+
                 }
             }
         }
