@@ -7,11 +7,18 @@ pipeline {
         jdk "jdk11"
     }
 
+ parameters {
+        string(name: 'BRANCH', defaultValue: 'master', description: 'Git branch of the Java project')
+
+    }
+
+
+
     stages {
         stage('compile') {
             steps {
                 // Get some code from a GitHub repository
-                git branch:'master', 
+                git branch: "${params.BRANCH}", 
                     url:'https://github.com/matthcol/movieapijava2021.git'
 
                 // Run Maven on a Unix agent.
