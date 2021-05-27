@@ -11,7 +11,7 @@ pipeline {
         stage('compile') {
             steps {
                 // Get some code from a GitHub repository
-                git branch:'dev', 
+                git branch:'master', 
                     url:'https://github.com/matthcol/movieapijava2021.git'
 
                 // Run Maven on a Unix agent.
